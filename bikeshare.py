@@ -5,6 +5,10 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
+def print_input_error(key_enter):
+    print('Your input {} is invalid, try again\n'.format(key_enter))
+return
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -22,11 +26,10 @@ def get_filters():
         try:
             city_idx = int(input(message_city))
         except ValueError:
-            print('Invalid input, enter number (1-3)')
+            print_input_error(city_idx)
             continue
-
         if city_idx not in [1,2,3]:
-            print('Invalid number, input number in (1-3)')
+            print_input_error(city_idx)
             continue
         else:
             break
@@ -39,10 +42,10 @@ def get_filters():
         try:
             filter_idx = int(input(message_filter))
         except ValueError:
-            print('Invalid input, enter a number (1-4)')
+            print_input_error(filter_idx)
             continue
         if filter_idx not in [1,2,3,4]:
-            print('Invalid option, input a number in (1-4)')
+            print_input_error(filter_idx)
             continue
         else:
             break
@@ -57,10 +60,10 @@ def get_filters():
             try:
                 month_idx = int(input(message_month))
             except ValueError:
-                print('Invalid option, enter number (0-6)')
+                print_input_error(month_idx)
                 continue
             if month_idx not in range(7):
-                print('Your input \'{}\' is invalid, try again\n'.format(month_idx))
+                print_input_error(month_idx)
                 continue
             else:
                 break
@@ -74,12 +77,12 @@ def get_filters():
             try:
                 day = input(message_day)
             except ValueError:
-                print('Your input {} is invalid, try again\n'.format(day))
+                print_input_error(day)
                 continue
             except KeyboardInterrupt:
                 break
             if day.lower() not in weekdays:
-                print('Your input {} is invalid, try again\n'.format(day))
+                print_input_error(day)
                 continue
             else:
                 print('The day you have choosed is {}\n'.format(day.title()))
