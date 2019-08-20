@@ -39,10 +39,10 @@ def get_filters():
         try:
             filter_idx = int(input(message_filter))
         except ValueError:
-            print('Invalid input, enter number (1-4)')
+            print('Invalid input, enter a number (1-4)')
             continue
         if filter_idx not in [1,2,3,4]:
-            print('Invalid number, input number in (1-4)')
+            print('Invalid option, input a number in (1-4)')
             continue
         else:
             break
@@ -57,10 +57,10 @@ def get_filters():
             try:
                 month_idx = int(input(message_month))
             except ValueError:
-                print('Invalid input, enter number (0-6)')
+                print('Invalid option, enter number (0-6)')
                 continue
             if month_idx not in range(7):
-                print('Your input {} is invalid, try again\n'.format(month_idx))
+                print('Your input \'{}\' is invalid, try again\n'.format(month_idx))
                 continue
             else:
                 break
