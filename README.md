@@ -9,7 +9,7 @@ With the Bikeshare data sets of 3 cities - New York City, Washington and Chicago
 
 User will be asked to choose one of the three cities, and then select the filters that they like to apply to current analyzation. The code includes  some error handling method to ensure there is no running error if the user's input is unexpected. 
 
-###Develop and running environment 
+### Develop and running environment 
 
 The program is wrote and tested in Anaconda 3 (Python 3.7.3 and Pandas 0.24.2)
 
